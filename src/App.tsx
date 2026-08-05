@@ -12,6 +12,7 @@ import type { CartItem, Product } from './types/product';
 function App() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false); // Estado para controlar la visibilidad del modal de autenticación
   const [searchTerm, setSearchTerm] = useState(''); // Estado de la búsqueda
 
   const handleAddToCart = (product: Product, quantity: number) => {
@@ -112,8 +113,6 @@ function App() {
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
       />
-
-      <AuthPage />
 
       <Footer />
     </div>
