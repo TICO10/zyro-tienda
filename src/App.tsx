@@ -89,7 +89,7 @@ function App() {
                   </div>
                 ) : (
                   <div className="space-y-12">
-                  <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <section className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                       <ProductCategory
                         product={PRODUCTS}
                         selectedTypeId={selectedType}
