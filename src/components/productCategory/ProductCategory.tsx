@@ -14,7 +14,7 @@ const COLOR_MAP: Record<string, { bg: string; border: string }> = {
   'Parte superior':    { border: '#0b2314', bg: '#14532d' },
 };
 
-export const ProductCategory: React.FC<ProductCategoryProps> = ({ product, selectedTypeId, onSelectType }) => {
+export const ProductCategory: React.FC<ProductCategoryProps> = ({ product, onSelectType }) => {
 
   const uniqueTypesInfo = useMemo<Array<{ id: string; name: string, count: number, color: { bg: string; border: string } }>>(() => {
     const map = new Map<string, { id: string; name: string, count: number, color: { bg: string; border: string } }>();
