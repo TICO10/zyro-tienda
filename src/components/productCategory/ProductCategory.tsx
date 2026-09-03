@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import type { Product } from '../../types/product';
 import './ProductCategory.css';
-import type { LetterTextIcon } from 'lucide-react';
 
 interface ProductCategoryProps {
   product: Product[];

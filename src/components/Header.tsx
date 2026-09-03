@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Search, User, ShoppingBag } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,7 +10,6 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ cartCount = 0, onOpenCart, searchTerm, onSearchChange }) => {
-  const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
