@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { ProductCategory } from './components/productCategory/ProductCategory';
 import { ProductCard } from './components/ProductCard';
 import { CartDrawer } from './components/CartDrawer';
 import { Checkout } from './pages/Checkout';
@@ -14,6 +15,7 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false); // Estado para controlar la visibilidad del modal de autenticación
   const [searchTerm, setSearchTerm] = useState(''); // Estado de la búsqueda
+  const [selectedType, setSelectedType] = useState<string | null>(null);
 
   const handleAddToCart = (product: Product, quantity: number) => {
     setCart((prevCart) => {
@@ -54,11 +56,15 @@ function App() {
     const query = searchTerm.toLowerCase().trim();
     const nameMatch = product.name.toLowerCase().includes(query);
     const categoryMatch = product.category.toLowerCase().includes(query);
-    return nameMatch || categoryMatch;
+    const typeMatch = product.type.id.toLowerCase().includes(query);
+    const matchesSearch = nameMatch || categoryMatch || typeMatch;
+    const matchesType = selectedType ? product.type.id === selectedType : true;
+
+    return matchesSearch && matchesType;
   });
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 font-sans flex flex-col justify-between">
+    <div className="min-h-screen text-neutral-100 font-sans flex flex-col justify-between">
       <Header 
       cartCount={totalCartItems} onOpenCart={() => setIsCartOpen(true)} searchTerm={searchTerm} onSearchChange={setSearchTerm} />
 
@@ -83,6 +89,14 @@ function App() {
                     </button>
                   </div>
                 ) : (
+                  <div className="space-y-12">
+                  <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                      <ProductCategory
+                        product={PRODUCTS}
+                        selectedTypeId={selectedType}
+                        onSelectType={setSelectedType}
+                      />
+                  </section>
                   <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {filteredProducts.map((product) => (
                       <ProductCard
@@ -92,6 +106,7 @@ function App() {
                       />
                     ))}
                   </section>
+                  </div>
                 )}
               </div>
             }
