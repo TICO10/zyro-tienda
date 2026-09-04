@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
             <li className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-neutral-400 shrink-0" />
               <a href="tel:+573000000000" className="hover:text-white transition-colors">
-                +57 300 000 0000
+                +57 301 000 0000
               </a>
             </li>
             <li className="flex items-center gap-3">
@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-neutral-400 shrink-0 mt-0.5" />
-              <span>Calle Principal #123, Ciudad, País</span>
+              <span>Colegio Bilingüe Maximino Poitiers, Bogota, Colombia</span>
             </li>
           </ul>
         </div>
@@ -52,13 +52,13 @@ export const Footer: React.FC = () => {
             Descubre nuestras últimas colecciones y lanzamientos exclusivos en Instagram.
           </p>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/zyro_studioscol?igsi=aWZheWcxbXA5d3Ay"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-white px-4 py-2.5 rounded-lg border border-neutral-700 transition-colors text-sm font-medium"
           >
             <InstagramIcon className="w-5 h-5 text-pink-500" />
-            @zyrobrand
+            @zyro_studioscol
           </a>
         </div>
 
@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
           <div className="w-full h-40 rounded-lg overflow-hidden border border-neutral-800">
             <iframe
               title="Ubicación de la tienda"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.782806254714!2d-74.0531583!3d4.6508933!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzknMDMuMiJOIDc0wrAwMycxMS40Ilc!5e0!3m2!1ses!2sco!4v1620000000000!5m2!1ses!2sco"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.105794397421!2d-74.09392162432366!3d4.751648041212342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f84599b54beab%3A0x906419dde3f23d89!2sColegio%20Biling%C3%BCe%20Maximino%20Poitiers!5e0!3m2!1ses-419!2sco!4v1788481738136!5m2!1ses-419!2sco"
               width="100%"
               height="100%"
               style={{ border: 0 }}
